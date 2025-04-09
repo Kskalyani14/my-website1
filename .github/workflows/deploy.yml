@@ -1,21 +1,16 @@
-name: Deploy to GitHub Pages
+name: Simple CI Test
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
-  deploy:
+  hello-world:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        
-          publish_dir: .
+      - name: Echo Message
+        run: echo "My static site is ready in the main branch!"
